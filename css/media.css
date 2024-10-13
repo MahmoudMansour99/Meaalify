@@ -347,3 +347,11 @@
     order: 2;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  /* _____________Chefs Styles_________________ */
+
+  .chef-card {
+    width: 31%;
+  }
+}

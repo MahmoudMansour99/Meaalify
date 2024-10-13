@@ -4,6 +4,7 @@
 
 :root {
   /* Font Colors */
+  --font-light-color-black: #000;
   --font-light-color-black-1: #212529;
   --font-light-color-black-2: #37373f;
   --font-light-color-gray-1: #7f7f90;
@@ -72,7 +73,7 @@ a {
 
 .big-title {
   font-size: 50px;
-  color: var(--bg-light-color-black);
+  color: var(--font-light-color-black);
   font-family: var(--font-style-special);
   font-weight: 400;
   margin-bottom: 60px;
@@ -141,25 +142,48 @@ textarea:focus {
   position: relative;
 }
 
-.links li a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--bg-light-color-red);
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
 .links li a:hover::before {
   visibility: visible;
   width: 100%;
 }
 
+.links .close-icon {
+  display: none;
+  width: fit-content;
+  align-self: flex-end;
+  font-size: 1.375rem;
+}
+
 .links li a:hover {
-  color: var(--bg-light-color-black);
+  color: var(--font-light-color-black);
+}
+
+.links li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--bg-light-color-red);
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+body:not(body:has(:target)) li a[href="#home"],
+body:has(.home:target) li a[href="#home"],
+body:has(.contact:target) li a[href="#contact"],
+body:has(.gallery:target) li a[href="#gallery"],
+body:has(.chefs:target) li a[href="#chefs"] {
+  color: var(--font-light-color-black);
+}
+
+body:not(body:has(:target)) li a[href="#home"]::before,
+body:has(.home:target) li a[href="#home"]::before,
+body:has(.contact:target) li a[href="#contact"]::before,
+body:has(.gallery:target) li a[href="#gallery"]::before,
+body:has(.chefs:target) li a[href="#chefs"]::before {
+  width: 100%;
 }
 
 .mode-group {
@@ -167,8 +191,13 @@ textarea:focus {
   color: var(--font-light-color-black);
 }
 
-.mode-group .dark {
+.mode-group i {
   cursor: pointer;
+  font-size: 25px;
+}
+
+.mode-group .light {
+  display: none;
 }
 
 /* __________________Header Styles____________________ */
@@ -228,7 +257,7 @@ textarea:focus {
   justify-content: space-between;
   font-weight: 600;
   column-gap: 15px;
-  color: var(--bg-light-color-black);
+  color: var(--font-light-color-black);
   transition: 0.3s all;
 }
 
@@ -241,7 +270,7 @@ textarea:focus {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  color: var(--bg-light-color-black);
+  color: var(--font-light-color-black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -351,6 +380,7 @@ textarea:focus {
   overflow: hidden;
   transition: 0.5s all;
   position: relative;
+  background-color: var(--bg-light-color-white);
 }
 
 .chef-card:hover {
@@ -378,6 +408,7 @@ textarea:focus {
 
 .card-content h3 {
   margin-bottom: 5px;
+  color: var(--font-light-color-black);
 }
 
 .card-content span {
@@ -441,7 +472,7 @@ textarea:focus {
 }
 
 .gallery-image {
-  border: 4px solid var(--bg-light-color-white);
+  border: 4px solid var(--font-light-color-white);
   position: relative;
   overflow: hidden;
 }
@@ -459,7 +490,7 @@ textarea:focus {
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(150%);
   transition: 0.5s all;
-  color: var(--bg-light-color-white);
+  color: var(--font-light-color-white);
 }
 
 .gallery-image:hover .layer {
@@ -498,7 +529,7 @@ textarea:focus {
 
 .contact-details .icon {
   background-color: var(--bg-light-color-red);
-  color: var(--bg-light-color-white);
+  color: var(--font-light-color-white);
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -511,6 +542,10 @@ textarea:focus {
   font-size: 20px;
   color: var(--font-light-color-gray-2);
   margin-bottom: 10px;
+}
+
+.address-content p {
+  color: var(--font-light-color-black);
 }
 
 .email-content h2 {
@@ -535,6 +570,10 @@ textarea:focus {
   font-size: 20px;
   color: var(--font-light-color-gray-2);
   margin-bottom: 10px;
+}
+
+.opening-hours-content p {
+  color: var(--font-light-color-black);
 }
 
 .contact form {
