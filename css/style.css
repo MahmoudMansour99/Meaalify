@@ -205,6 +205,7 @@ body:has(.chefs:target) li a[href="#chefs"]::before {
   display: flex;
   align-items: center;
   width: 100%;
+  min-height: 100vh;
 }
 
 .home .container {
@@ -361,7 +362,7 @@ body:has(.chefs:target) li a[href="#chefs"]::before {
 /* ________________Chefs Styles__________________ */
 .chefs .container {
   text-align: center;
-  padding: 40px 5px;
+  padding: 80px 5px;
 }
 
 .chefs-cards {
@@ -674,6 +675,10 @@ form .btn-main {
 .about div img {
   width: 40px;
   height: 40px;
+}
+
+.about div h2 a {
+  color: #fff;
 }
 
 .about p {
