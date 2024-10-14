@@ -184,6 +184,7 @@ body:has(.contact:target) li a[href="#contact"]::before,
 body:has(.gallery:target) li a[href="#gallery"]::before,
 body:has(.chefs:target) li a[href="#chefs"]::before {
   width: 100%;
+  visibility: visible;
 }
 
 .mode-group {
